@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KuroNoru</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+            height: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #1f2937;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #6b7280;
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #9ca3af;
+        }
+        
+        /* Mobile responsive adjustments */
+        @media (max-width: 640px) {
+            .skill-card {
+                padding: 1rem;
+            }
+            .code-container {
+                font-size: 0.8rem;
+            }
+        }
+    </style>
+</head>
+<body class="bg-gray-900 text-white font-sans">
+    <!-- Header Section -->
+    <header class="bg-gradient-to-r from-purple-600 to-pink-500 py-6 px-4">
+        <div class="container mx-auto text-center">
+            <div class="flex justify-center items-center mb-2">
+                <span class="inline-block w-3 h-3 bg-green-500 rounded-full mr-2" id="status-icon"></span>
+                <h1 class="text-3xl md:text-4xl font-bold">KuroNoru</h1>
+            </div>
+            <p class="text-base md:text-lg mt-2">Creative Content Creator & Video Editor</p>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="container mx-auto py-8 md:py-12 px-4">
+        <!-- Character Image Section -->
+        <section class="mb-8 md:mb-12">
+            <h2 class="text-2xl font-semibold text-center mb-4 md:mb-6">Model Gweh</h2>
+            <div class="w-full h-[20rem] sm:h-[32rem] overflow-y-auto border-2 border-white rounded-lg shadow-lg">
+                <img src="https://i.postimg.cc/3rmVfvTH/batman.png" alt="VTuber Character" class="h-auto w-full max-w-md mx-auto">
+            </div>
+        </section>
+
+        <!-- Development Skills Section -->
+        <section class="mb-8 md:mb-12">
+            <div class="bg-gray-800 p-4 md:p-6 rounded-lg shadow-md">
+                <h2 class="text-2xl font-semibold text-center mb-4 md:mb-6">✨ Skill Gwe Tuhh</h2>
+                
+                <!-- Code Snippet -->
+                <div class="mb-6 md:mb-8">
+                    <div class="bg-gray-900 rounded-t-lg p-2 flex items-center">
+                        <div class="flex space-x-2">
+                            <div class="w-2 h-2 md:w-3 md:h-3 rounded-full bg-red-500"></div>
+                            <div class="w-2 h-2 md:w-3 md:h-3 rounded-full bg-yellow-500"></div>
+                            <div class="w-2 h-2 md:w-3 md:h-3 rounded-full bg-green-500"></div>
+                        </div>
+                        <span class="text-xs md:text-sm ml-2 md:ml-4">skills.html</span>
+                    </div>
+                    <pre class="bg-gray-900 p-3 md:p-4 rounded-b-lg overflow-x-auto font-mono text-xs md:text-sm code-container">
+<code class="text-blue-400">&lt;!-- My Creative Toolbox --&gt;</code>
+<code class="text-purple-400">&lt;div</code> <code class="text-green-400">class=</code><code class="text-orange-400">"skills"</code><code class="text-purple-400">&gt;</code>
+  <code class="text-purple-400">&lt;div</code> <code class="text-green-400">class=</code><code class="text-orange-400">"tool"</code><code class="text-purple-400">&gt;</code>
+    <code class="text-purple-400">&lt;img</code> <code class="text-green-400">src=</code><code class="text-orange-400">"html5.svg"</code> <code class="text-green-400">alt=</code><code class="text-orange-400">"HTML5"</code><code class="text-purple-400">&gt;</code>
+    <code class="text-purple-400">&lt;progress</code> <code class="text-green-400">value=</code><code class="text-orange-400">"95"</code> <code class="text-green-400">max=</code><code class="text-orange-400">"100"</code><code class="text-purple-400">&gt;</code><code class="text-purple-400">&lt;/progress&gt;</code>
+  <code class="text-purple-400">&lt;/div&gt;</code>
+  
+  <code class="text-purple-400">&lt;div</code> <code class="text-green-400">class=</code><code class="text-orange-400">"tool"</code><code class="text-purple-400">&gt;</code>
+    <code class="text-purple-400">&lt;img</code> <code class="text-green-400">src=</code><code class="text-orange-400">"figma.svg"</code> <code class="text-green-400">alt=</code><code class="text-orange-400">"Figma"</code><code class="text-purple-400">&gt;</code>
+    <code class="text-purple-400">&lt;progress</code> <code class="text-green-400">value=</code><code class="text-orange-400">"80"</code> <code class="text-green-400">max=</code><code class="text-orange-400">"100"</code><code class="text-purple-400">&gt;</code><code class="text-purple-400">&lt;/progress&gt;</code>
+  <code class="text-purple-400">&lt;/div&gt;</code>
+<code class="text-purple-400">&lt;/div&gt;</code></pre>
+                </div>
+
+                <!-- Skills Grid -->
+                <div class="grid grid-cols-2 gap-3 md:gap-4">
+                    <!-- HTML -->
+                    <div class="bg-gray-900 p-3 md:p-4 rounded-lg skill-card hover:transform hover:scale-[1.02] transition-transform">
+                        <div class="flex items-center mb-2">
+                            <i class="fab fa-html5 text-3xl md:text-4xl text-orange-500 mr-3"></i>
+                            <h3 class="font-semibold text-lg md:text-xl">HTML/CSS</h3>
+                        </div>
+                        <div class="w-full bg-gray-700 rounded-full h-2">
+                            <div class="bg-orange-500 h-2 rounded-full" style="width: 95%"></div>
+                        </div>
+                        <p class="text-xs md:text-sm text-gray-300 mt-2">Web Development, Responsive Design</p>
+                    </div>
+                    
+                    <!-- CapCut -->
+                    <div class="bg-gray-900 p-3 md:p-4 rounded-lg skill-card hover:transform hover:scale-[1.02] transition-transform">
+                        <div class="flex items-center mb-2">
+                            <i class="fas fa-film text-3xl md:text-4xl text-blue-400 mr-3"></i>
+                            <h3 class="font-semibold text-lg md:text-xl">CapCut</h3>
+                        </div>
+                        <div class="w-full bg-gray-700 rounded-full h-2">
+                            <div class="bg-blue-400 h-2 rounded-full" style="width: 70%"></div>
+                        </div>
+                        <p class="text-xs md:text-sm text-gray-300 mt-2">Short-form Video Editing, Effects</p>
+                    </div>
+                    
+                    <!-- Premiere -->
+                    <div class="bg-gray-900 p-3 md:p-4 rounded-lg skill-card hover:transform hover:scale-[1.02] transition-transform">
+                        <div class="flex items-center mb-2">
+                            <i class="fab fa-adobe text-3xl md:text-4xl text-purple-500 mr-3"></i>
+                            <h3 class="font-semibold text-lg md:text-xl">Premiere Pro</h3>
+                        </div>
+                        <div class="w-full bg-gray-700 rounded-full h-2">
+                            <div class="bg-purple-500 h-2 rounded-full" style="width: 40%"></div>
+                        </div>
+                        <p class="text-xs md:text-sm text-gray-300 mt-2">Video Editing, Basic Effects</p>
+                    </div>
+                    
+                    <!-- Figma -->
+                    <div class="bg-gray-900 p-3 md:p-4 rounded-lg skill-card hover:transform hover:scale-[1.02] transition-transform">
+                        <div class="flex items-center mb-2">
+                            <i class="fab fa-figma text-3xl md:text-4xl text-pink-400 mr-3"></i>
+                            <h3 class="font-semibold text-lg md:text-xl">Figma</h3>
+                        </div>
+                        <div class="w-full bg-gray-700 rounded-full h-2">
+                            <div class="bg-pink-400 h-2 rounded-full" style="width: 80%"></div>
+                        </div>
+                        <p class="text-xs md:text-sm text-gray-300 mt-2">UI/UX Design, Prototyping</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Social Media Links -->
+        <section class="mb-8 md:mb-12">
+            <div class="bg-gray-800 p-4 md:p-6 rounded-lg shadow-md">
+                <h2 class="text-2xl font-semibold text-center mb-4 md:mb-6">Connect with Me</h2>
+                <div class="grid grid-cols-2 md:grid-cols-3 gap-3 max-w-2xl mx-auto">
+                    <a href="https://www.youtube.com/@Kuronoru1" target="_blank" class="bg-red-600 hover:bg-red-700 text-white font-medium py-2 md:py-3 px-4 md:px-6 rounded-lg text-center transition duration-300 flex items-center justify-center text-sm md:text-base">
+                        <i class="fab fa-youtube mr-2"></i> YouTube
+                    </a>
+                    <a href="https://www.instagram.com/batmankecelup" target="_blank" class="bg-pink-600 hover:bg-pink-700 text-white font-medium py-2 md:py-3 px-4 md:px-6 rounded-lg text-center transition duration-300 flex items-center justify-center text-sm md:text-base">
+                        <i class="fab fa-instagram mr-2"></i> Instagram
+                    </a>
+                    <a href="https://www.tiktok.com/@kuronoru1" target="_blank" class="bg-black hover:bg-gray-800 text-white font-medium py-2 md:py-3 px-4 md:px-6 rounded-lg text-center transition duration-300 flex items-center justify-center text-sm md:text-base">
+                        <i class="fab fa-tiktok mr-2"></i> TikTok
+                    </a>
+                    
+                    <a href="https://trakteer.id/KuroNoru" target="_blank" class="bg-blue-600 hover:bg-blue-700 text-white font-medium py-2 md:py-3 px-4 md:px-6 rounded-lg text-center transition duration-300 flex items-center justify-center text-sm md:text-base">
+                        <i class="fas fa-coffee mr-2"></i> Traktir
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- About Section -->
+        <section class="text-center">
+            <div class="bg-gray-800 p-4 md:p-6 rounded-lg shadow-md">
+                <h2 class="text-2xl font-semibold mb-4 md:mb-6">About Me</h2>
+                <p class="max-w-2xl mx-auto text-sm md:text-base">
+                    Yang Mencari Lore Nanti Yachhh Lagi Dibuatt
+                </p>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 py-4 md:py-6 text-center text-sm md:text-base">
+        <p>© 2025 KuroNoru.</p>
+    </footer>
+</body>
+</html>
