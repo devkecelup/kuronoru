@@ -3,10 +3,38 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>KuroNoru</title>
+    <title>KuroNoru | Digital Nolep Entity</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
+        /* Cyberpunk Glow Effects */
+        .cyber-glow {
+            text-shadow: 0 0 5px #ec4899, 0 0 10px #ec4899;
+        }
+        .neon-border {
+            box-shadow: 0 0 10px #8b5cf6, 0 0 20px #8b5cf6 inset;
+        }
+        .code-glitch {
+            animation: glitch 1s linear infinite;
+        }
+        @keyframes glitch {
+            0% { text-shadow: 1px 0 #ec4899; }
+            25% { text-shadow: -2px 0 #8b5cf6; }
+            50% { text-shadow: -1px 0 #ec4899; }
+            75% { text-shadow: 2px 0 #8b5cf6; }
+            100% { text-shadow: 1px 0 #ec4899; }
+        }
+        
+        /* Terminal Cursor Effect */
+        .terminal-cursor:after {
+            content: "|";
+            animation: blink 1s step-end infinite;
+        }
+        @keyframes blink {
+            from, to { opacity: 1; }
+            50% { opacity: 0; }
+        }
+        
         /* Custom Scrollbar */
         ::-webkit-scrollbar {
             width: 8px;
@@ -16,184 +44,296 @@
             background: #1f2937;
         }
         ::-webkit-scrollbar-thumb {
-            background: #6b7280;
+            background: #8b5cf6;
             border-radius: 4px;
         }
         ::-webkit-scrollbar-thumb:hover {
-            background: #9ca3af;
-        }
-        
-        /* Mobile responsive adjustments */
-        @media (max-width: 640px) {
-            .skill-card {
-                padding: 1rem;
-            }
-            .code-container {
-                font-size: 0.8rem;
-            }
+            background: #ec4899;
         }
     </style>
 </head>
-<body class="bg-gray-900 text-white font-sans">
+<body class="bg-gray-900 text-white font-mono">
+    <!-- Glitch Background Elements -->
+    <div class="fixed inset-0 overflow-hidden opacity-10 pointer-events-none">
+        <div class="absolute top-0 left-0 w-full h-full grid grid-cols-12 grid-rows-12">
+            <template x-for="i in 144" :key="i">
+                <div class="border border-gray-700"></div>
+            </template>
+        </div>
+    </div>
+
     <!-- Header Section -->
-    <header class="bg-gradient-to-r from-purple-600 to-pink-500 py-6 px-4">
-        <div class="container mx-auto text-center">
-            <div class="flex justify-center items-center mb-2">
-                <span class="inline-block w-3 h-3 bg-green-500 rounded-full mr-2" id="status-icon"></span>
-                <h1 class="text-3xl md:text-4xl font-bold">KuroNoru</h1>
+    <header class="bg-gradient-to-r from-purple-900 to-pink-900 py-8 px-4 relative overflow-hidden neon-border">
+        <div class="absolute inset-0 bg-[url('https://gifer.com/en/WSyZ')] opacity-10"></div>
+        <div class="container mx-auto text-center relative">
+            <div class="flex justify-center items-center mb-4">
+                <span class="inline-block w-3 h-3 bg-green-500 rounded-full mr-3 animate-pulse"></span>
+                <h1 class="text-4xl md:text-6xl font-bold cyber-glow">
+                    <span class="text-purple-400">Kuro</span><span class="text-pink-400">Noru</span>
+                </h1>
             </div>
-            <p class="text-base md:text-lg mt-2">Creative Content Creator & Video Editor</p>
+            <p class="text-lg md:text-xl mt-2 text-gray-300">
+                <span class="terminal-cursor">404Sensei of NekoTekku Protocol</span>
+            </p>
+            <div class="mt-4 text-xs text-gray-400 code-glitch">
+                STATUS: ONLINE | REALITY: 404_NOT_FOUND | SYSTEM: NEKOROR_OS_v2.5
+            </div>
         </div>
     </header>
 
     <!-- Main Content -->
-    <main class="container mx-auto py-8 md:py-12 px-4">
+    <main class="container mx-auto py-8 md:py-12 px-4 relative">
         <!-- Character Image Section -->
-        <section class="mb-8 md:mb-12">
-            <h2 class="text-2xl font-semibold text-center mb-4 md:mb-6">Model Gweh</h2>
-            <div class="w-full h-[20rem] sm:h-[32rem] overflow-y-auto border-2 border-white rounded-lg shadow-lg">
-                <img src="https://i.postimg.cc/3rmVfvTH/batman.png" alt="VTuber Character" class="h-auto w-full max-w-md mx-auto">
+        <section class="mb-12 relative group">
+            <div class="absolute -inset-1 bg-gradient-to-r from-purple-600 to-pink-600 rounded-lg blur opacity-75 group-hover:opacity-100 transition duration-200"></div>
+            <div class="relative bg-gray-800 rounded-lg p-1 h-[30rem] overflow-y-auto border border-gray-700">
+                <h2 class="text-2xl font-semibold text-center mb-6 text-purple-300 cyber-glow">
+                    [ Digital Avatar: NEKOROR_Model.exe ]
+                </h2>
+                <img src="https://i.postimg.cc/3rmVfvTH/batman.png" alt="KuroNoru Avatar" class="h-auto w-full max-w-md mx-auto transition-all duration-300 hover:scale-105">
+                <div class="mt-4 text-center text-sm text-gray-400">
+                    <span class="inline-block px-2 py-1 bg-gray-900 rounded">[SYSTEM] Model loaded: 98.7% integrity</span>
+                </div>
             </div>
         </section>
 
-        <!-- Development Skills Section -->
-        <section class="mb-8 md:mb-12">
-            <div class="bg-gray-800 p-4 md:p-6 rounded-lg shadow-md">
-                <h2 class="text-2xl font-semibold text-center mb-4 md:mb-6">✨ Skill Gwe Tuhh</h2>
-                
-                <!-- Code Snippet -->
-                <div class="mb-6 md:mb-8">
-                    <div class="bg-gray-900 rounded-t-lg p-2 flex items-center">
-                        <div class="flex space-x-2">
-                            <div class="w-2 h-2 md:w-3 md:h-3 rounded-full bg-red-500"></div>
-                            <div class="w-2 h-2 md:w-3 md:h-3 rounded-full bg-yellow-500"></div>
-                            <div class="w-2 h-2 md:w-3 md:h-3 rounded-full bg-green-500"></div>
-                        </div>
-                        <span class="text-xs md:text-sm ml-2 md:ml-4">skills.html</span>
+        <!-- Lore Section -->
+        <section class="mb-12 bg-gray-800/50 backdrop-blur-sm rounded-lg p-6 border border-gray-700 neon-border">
+            <h2 class="text-2xl font-semibold mb-6 text-center text-pink-300 cyber-glow">
+                [ SYSTEM_LOG: Origin_Story.404 ]
+            </h2>
+            <div class="space-y-4 text-gray-300">
+                <p class="border-l-4 border-purple-500 pl-4 py-1">
+                    <span class="text-purple-300 font-bold">[LOG_ENTRY 001]</span> Dulu... dia hanyalah manusia biasa bernama Kuro.
+                </p>
+                <p>
+                    Seorang nolep yang hidup di kamar sempit dengan cahaya monitor sebagai matahari, kopi item sebagai air suci, dan tab incognito sebagai pelarian duniawi. Waktunya habis untuk bermain game, ngoding, ngedit video, dan... scroll website yang tidak boleh dibuka saat ada orang tua lewat.
+                </p>
+                <p class="border-l-4 border-pink-500 pl-4 py-1">
+                    <span class="text-pink-300 font-bold">[CRITICAL_EVENT 002]</span> Namun pada suatu malam jam 3 pagi—saat ia sedang melakukan kombinasi suci: ngoding + ngopi + anime OP, tiba-tiba sebuah popup misterius muncul di layarnya.
+                </p>
+                <div class="bg-black p-4 rounded border border-gray-700 font-mono text-sm">
+                    <div class="flex mb-2">
+                        <div class="w-3 h-3 rounded-full bg-red-500 mr-2"></div>
+                        <div class="w-3 h-3 rounded-full bg-yellow-500 mr-2"></div>
+                        <div class="w-3 h-3 rounded-full bg-green-500"></div>
                     </div>
-                    <pre class="bg-gray-900 p-3 md:p-4 rounded-b-lg overflow-x-auto font-mono text-xs md:text-sm code-container">
-<code class="text-blue-400">&lt;!-- My Creative Toolbox --&gt;</code>
-<code class="text-purple-400">&lt;div</code> <code class="text-green-400">class=</code><code class="text-orange-400">"skills"</code><code class="text-purple-400">&gt;</code>
-  <code class="text-purple-400">&lt;div</code> <code class="text-green-400">class=</code><code class="text-orange-400">"tool"</code><code class="text-purple-400">&gt;</code>
-    <code class="text-purple-400">&lt;img</code> <code class="text-green-400">src=</code><code class="text-orange-400">"html5.svg"</code> <code class="text-green-400">alt=</code><code class="text-orange-400">"HTML5"</code><code class="text-purple-400">&gt;</code>
-    <code class="text-purple-400">&lt;progress</code> <code class="text-green-400">value=</code><code class="text-orange-400">"95"</code> <code class="text-green-400">max=</code><code class="text-orange-400">"100"</code><code class="text-purple-400">&gt;</code><code class="text-purple-400">&lt;/progress&gt;</code>
-  <code class="text-purple-400">&lt;/div&gt;</code>
-  
-  <code class="text-purple-400">&lt;div</code> <code class="text-green-400">class=</code><code class="text-orange-400">"tool"</code><code class="text-purple-400">&gt;</code>
-    <code class="text-purple-400">&lt;img</code> <code class="text-green-400">src=</code><code class="text-orange-400">"figma.svg"</code> <code class="text-green-400">alt=</code><code class="text-orange-400">"Figma"</code><code class="text-purple-400">&gt;</code>
-    <code class="text-purple-400">&lt;progress</code> <code class="text-green-400">value=</code><code class="text-orange-400">"80"</code> <code class="text-green-400">max=</code><code class="text-orange-400">"100"</code><code class="text-purple-400">&gt;</code><code class="text-purple-400">&lt;/progress&gt;</code>
-  <code class="text-purple-400">&lt;/div&gt;</code>
-<code class="text-purple-400">&lt;/div&gt;</code></pre>
+                    <div class="text-red-400">ERROR 404: Reality Not Found</div>
+                    <div class="text-green-400">Do you wish to enter NekoTekku Protocol? [Y/N]</div>
+                    <div class="text-yellow-300 blink">></div>
                 </div>
+                <p>
+                    Tanpa berpikir, Kuro menekan Y. Sekejap, dunia di sekelilingnya membeku. Kabel menyala, laptopnya meledak dalam cahaya biru, dan ia ter-ISEKAI ke dalam dunia digital—sebuah realitas baru yang disebut NekoTekku (ネコテック): dunia antara baris kode, meme anime, dan AI glitch.
+                </p>
+                <p class="border-l-4 border-purple-500 pl-4 py-1">
+                    <span class="text-purple-300 font-bold">[TRANSFORMATION 003]</span> Tubuh manusianya berubah.
+                </p>
+                <p>
+                    Ia menjadi Kuronoru (クロノル) — entitas virtual dengan telinga kucing, hoodie bertulisan NEKOROR, dan jiwa nolep yang di-upgrade jadi 404Sensei: pengembara digital yang tugasnya menyebarkan ilmu coding, desain, dan editing... sambil tetap menjadi dirinya yang absurd dan penuh tab misterius.
+                </p>
+                <p class="border-l-4 border-pink-500 pl-4 py-1">
+                    <span class="text-pink-300 font-bold">[CURRENT_STATUS 004]</span> Kini, Kuronoru tinggal di Void of Nolep Tech, sebuah kamar digital tanpa pintu keluar, hanya dihuni oleh:
+                </p>
+                <ul class="list-disc list-inside marker:text-purple-400 space-y-1">
+                    <li>Kabel USB berserakan yang hidup sendiri</li>
+                    <li>Stiker waifu di tembok kode</li>
+                    <li>Playlist anime nonstop</li>
+                    <li>Monitor yang selalu menampilkan terminal misterius</li>
+                    <li>Botol kopi yang tidak pernah habis</li>
+                </ul>
+            </div>
+        </section>
 
-                <!-- Skills Grid -->
-                <div class="grid grid-cols-2 gap-3 md:gap-4">
-                    <!-- HTML -->
-                    <div class="bg-gray-900 p-3 md:p-4 rounded-lg skill-card hover:transform hover:scale-[1.02] transition-transform">
-                        <div class="flex items-center mb-2">
-                            <i class="fab fa-html5 text-3xl md:text-4xl text-orange-500 mr-3"></i>
-                            <h3 class="font-semibold text-lg md:text-xl">HTML/CSS</h3>
+        <!-- Skills Section -->
+        <section class="mb-12">
+            <div class="bg-gray-800/80 backdrop-blur-sm rounded-lg shadow-xl overflow-hidden neon-border">
+                <div class="bg-gradient-to-r from-purple-900 to-pink-900 p-4">
+                    <h2 class="text-2xl font-semibold text-center cyber-glow">
+                        [ SYSTEM_SKILLS: NekoTekku_Abilities ]
+                    </h2>
+                </div>
+                <div class="p-4 md:p-6">
+                    <!-- Code Snippet -->
+                    <div class="mb-8 bg-black rounded-lg overflow-hidden border border-gray-700">
+                        <div class="bg-gray-900 p-2 flex items-center border-b border-gray-700">
+                            <div class="flex space-x-2 mr-3">
+                                <div class="w-3 h-3 rounded-full bg-red-500"></div>
+                                <div class="w-3 h-3 rounded-full bg-yellow-500"></div>
+                                <div class="w-3 h-3 rounded-full bg-green-500"></div>
+                            </div>
+                            <span class="text-sm text-gray-400">skills_analyzer.exe</span>
                         </div>
-                        <div class="w-full bg-gray-700 rounded-full h-2">
-                            <div class="bg-orange-500 h-2 rounded-full" style="width: 95%"></div>
-                        </div>
-                        <p class="text-xs md:text-sm text-gray-300 mt-2">Web Development, Responsive Design</p>
+                        <pre class="p-4 overflow-x-auto text-sm md:text-base">
+<span class="text-gray-600">// NekoTekku Skill Matrix Analysis</span>
+<span class="text-purple-400">const</span> <span class="text-blue-400">kuronoru</span> <span class="text-purple-400">=</span> {
+  <span class="text-yellow-400">digitalForm</span>: <span class="text-green-400">"NEKOROR_Model"</span>,
+  <span class="text-yellow-400">skills</span>: {
+    <span class="text-blue-400">htmlCss</span>: <span class="text-amber-400">95</span>,  <span class="text-gray-600">// Web Sorcery</span>
+    <span class="text-blue-400">capcut</span>: <span class="text-amber-400">70</span>,   <span class="text-gray-600">// Video Alchemy</span>
+    <span class="text-blue-400">premiere</span>: <span class="text-amber-400">40</span>, <span class="text-gray-600">// Time Manipulation</span>
+    <span class="text-blue-400">figma</span>: <span class="text-amber-400">80</span>     <span class="text-gray-600">// UI Dimension Crafting</span>
+  },
+  <span class="text-yellow-400">specialAbility</span>: <span class="text-green-400">"Reality Glitching"</span>
+};</pre>
                     </div>
-                    
-                    <!-- CapCut -->
-                    <div class="bg-gray-900 p-3 md:p-4 rounded-lg skill-card hover:transform hover:scale-[1.02] transition-transform">
-                        <div class="flex items-center mb-2">
-                            <i class="fas fa-film text-3xl md:text-4xl text-blue-400 mr-3"></i>
-                            <h3 class="font-semibold text-lg md:text-xl">CapCut</h3>
+
+                    <!-- Skills Grid -->
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                        <!-- HTML -->
+                        <div class="bg-gray-900/50 p-4 rounded-lg border border-gray-700 hover:border-purple-500 transition-all group">
+                            <div class="flex items-center mb-3">
+                                <div class="bg-purple-900 p-2 rounded-lg mr-3 group-hover:bg-purple-800 transition">
+                                    <i class="fab fa-html5 text-2xl text-orange-500"></i>
+                                </div>
+                                <div class="flex-1">
+                                    <h3 class="font-semibold text-lg text-purple-300">HTML/CSS</h3>
+                                    <div class="flex items-center">
+                                        <div class="w-full bg-gray-700 rounded-full h-2 mr-2">
+                                            <div class="bg-orange-500 h-2 rounded-full" style="width: 95%"></div>
+                                        </div>
+                                        <span class="text-xs text-gray-400">95%</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <p class="text-sm text-gray-400 pl-14">Web Sorcery - Manipulating the digital fabric</p>
                         </div>
-                        <div class="w-full bg-gray-700 rounded-full h-2">
-                            <div class="bg-blue-400 h-2 rounded-full" style="width: 70%"></div>
+                        
+                        <!-- CapCut -->
+                        <div class="bg-gray-900/50 p-4 rounded-lg border border-gray-700 hover:border-blue-400 transition-all group">
+                            <div class="flex items-center mb-3">
+                                <div class="bg-blue-900/70 p-2 rounded-lg mr-3 group-hover:bg-blue-800/70 transition">
+                                    <i class="fas fa-film text-2xl text-blue-400"></i>
+                                </div>
+                                <div class="flex-1">
+                                    <h3 class="font-semibold text-lg text-blue-300">CapCut</h3>
+                                    <div class="flex items-center">
+                                        <div class="w-full bg-gray-700 rounded-full h-2 mr-2">
+                                            <div class="bg-blue-400 h-2 rounded-full" style="width: 70%"></div>
+                                        </div>
+                                        <span class="text-xs text-gray-400">70%</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <p class="text-sm text-gray-400 pl-14">Video Alchemy - Crafting digital illusions</p>
                         </div>
-                        <p class="text-xs md:text-sm text-gray-300 mt-2">Short-form Video Editing, Effects</p>
-                    </div>
-                    
-                    <!-- Premiere -->
-                    <div class="bg-gray-900 p-3 md:p-4 rounded-lg skill-card hover:transform hover:scale-[1.02] transition-transform">
-                        <div class="flex items-center mb-2">
-                            <i class="fab fa-adobe text-3xl md:text-4xl text-purple-500 mr-3"></i>
-                            <h3 class="font-semibold text-lg md:text-xl">Premiere Pro</h3>
+                        
+                        <!-- Premiere -->
+                        <div class="bg-gray-900/50 p-4 rounded-lg border border-gray-700 hover:border-purple-400 transition-all group">
+                            <div class="flex items-center mb-3">
+                                <div class="bg-purple-900/70 p-2 rounded-lg mr-3 group-hover:bg-purple-800/70 transition">
+                                    <i class="fab fa-adobe text-2xl text-purple-400"></i>
+                                </div>
+                                <div class="flex-1">
+                                    <h3 class="font-semibold text-lg text-purple-300">Premiere Pro</h3>
+                                    <div class="flex items-center">
+                                        <div class="w-full bg-gray-700 rounded-full h-2 mr-2">
+                                            <div class="bg-purple-400 h-2 rounded-full" style="width: 40%"></div>
+                                        </div>
+                                        <span class="text-xs text-gray-400">40%</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <p class="text-sm text-gray-400 pl-14">Time Manipulation - Basic reality warping</p>
                         </div>
-                        <div class="w-full bg-gray-700 rounded-full h-2">
-                            <div class="bg-purple-500 h-2 rounded-full" style="width: 40%"></div>
+                        
+                        <!-- Figma -->
+                        <div class="bg-gray-900/50 p-4 rounded-lg border border-gray-700 hover:border-pink-400 transition-all group">
+                            <div class="flex items-center mb-3">
+                                <div class="bg-pink-900/70 p-2 rounded-lg mr-3 group-hover:bg-pink-800/70 transition">
+                                    <i class="fab fa-figma text-2xl text-pink-400"></i>
+                                </div>
+                                <div class="flex-1">
+                                    <h3 class="font-semibold text-lg text-pink-300">Figma</h3>
+                                    <div class="flex items-center">
+                                        <div class="w-full bg-gray-700 rounded-full h-2 mr-2">
+                                            <div class="bg-pink-400 h-2 rounded-full" style="width: 80%"></div>
+                                        </div>
+                                        <span class="text-xs text-gray-400">80%</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <p class="text-sm text-gray-400 pl-14">UI Dimension Crafting - Designing digital realms</p>
                         </div>
-                        <p class="text-xs md:text-sm text-gray-300 mt-2">Video Editing, Basic Effects</p>
-                    </div>
-                    
-                    <!-- Figma -->
-                    <div class="bg-gray-900 p-3 md:p-4 rounded-lg skill-card hover:transform hover:scale-[1.02] transition-transform">
-                        <div class="flex items-center mb-2">
-                            <i class="fab fa-figma text-3xl md:text-4xl text-pink-400 mr-3"></i>
-                            <h3 class="font-semibold text-lg md:text-xl">Figma</h3>
-                        </div>
-                        <div class="w-full bg-gray-700 rounded-full h-2">
-                            <div class="bg-pink-400 h-2 rounded-full" style="width: 80%"></div>
-                        </div>
-                        <p class="text-xs md:text-sm text-gray-300 mt-2">UI/UX Design, Prototyping</p>
                     </div>
                 </div>
             </div>
         </section>
 
         <!-- Social Media Links -->
-        <section class="mb-8 md:mb-12">
-            <div class="bg-gray-800 p-4 md:p-6 rounded-lg shadow-md">
-                <h2 class="text-2xl font-semibold text-center mb-4 md:mb-6">Connect with Me</h2>
-                <div class="grid grid-cols-2 md:grid-cols-3 gap-3 max-w-2xl mx-auto">
-                    <a href="https://www.youtube.com/@Kuronoru1" target="_blank" class="bg-red-600 hover:bg-red-700 text-white font-medium py-2 md:py-3 px-4 md:px-6 rounded-lg text-center transition duration-300 flex items-center justify-center text-sm md:text-base">
-                        <i class="fab fa-youtube mr-2"></i> YouTube
+        <section class="mb-12">
+            <div class="bg-gray-800/80 backdrop-blur-sm rounded-lg overflow-hidden neon-border">
+                <div class="bg-gradient-to-r from-purple-900 to-pink-900 p-4">
+                    <h2 class="text-2xl font-semibold text-center cyber-glow">
+                        [ CONNECTION_PORTS: Digital_Outreach ]
+                    </h2>
+                </div>
+                <div class="p-6 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+                    <a href="https://www.youtube.com/@Kuronoru1" target="_blank" class="bg-red-900/50 hover:bg-red-900/70 border border-red-900 hover:border-red-700 text-white font-medium py-3 px-6 rounded-lg text-center transition-all duration-300 flex items-center justify-center group">
+                        <i class="fab fa-youtube text-2xl mr-3 group-hover:text-red-400"></i>
+                        <div>
+                            <div class="font-semibold">YouTube</div>
+                            <div class="text-xs text-gray-400">/Kuronoru1</div>
+                        </div>
                     </a>
-                    <a href="https://www.instagram.com/batmankecelup" target="_blank" class="bg-pink-600 hover:bg-pink-700 text-white font-medium py-2 md:py-3 px-4 md:px-6 rounded-lg text-center transition duration-300 flex items-center justify-center text-sm md:text-base">
-                        <i class="fab fa-instagram mr-2"></i> Instagram
+                    <a href="https://www.instagram.com/batmankecelup" target="_blank" class="bg-pink-900/50 hover:bg-pink-900/70 border border-pink-900 hover:border-pink-700 text-white font-medium py-3 px-6 rounded-lg text-center transition-all duration-300 flex items-center justify-center group">
+                        <i class="fab fa-instagram text-2xl mr-3 group-hover:text-pink-400"></i>
+                        <div>
+                            <div class="font-semibold">Instagram</div>
+                            <div class="text-xs text-gray-400">/batmankecelup</div>
+                        </div>
                     </a>
-                    <a href="https://www.tiktok.com/@kuronoru1" target="_blank" class="bg-black hover:bg-gray-800 text-white font-medium py-2 md:py-3 px-4 md:px-6 rounded-lg text-center transition duration-300 flex items-center justify-center text-sm md:text-base">
-                        <i class="fab fa-tiktok mr-2"></i> TikTok
+                    <a href="https://www.tiktok.com/@kuronoru1" target="_blank" class="bg-gray-900 hover:bg-gray-800 border border-gray-800 hover:border-gray-700 text-white font-medium py-3 px-6 rounded-lg text-center transition-all duration-300 flex items-center justify-center group">
+                        <i class="fab fa-tiktok text-2xl mr-3 group-hover:text-cyan-300"></i>
+                        <div>
+                            <div class="font-semibold">TikTok</div>
+                            <div class="text-xs text-gray-400">/kuronoru1</div>
+                        </div>
                     </a>
-                    
-                    <a href="https://trakteer.id/KuroNoru" target="_blank" class="bg-blue-600 hover:bg-blue-700 text-white font-medium py-2 md:py-3 px-4 md:px-6 rounded-lg text-center transition duration-300 flex items-center justify-center text-sm md:text-base">
-                        <i class="fas fa-coffee mr-2"></i> Traktir
+                    <a href="https://trakteer.id/KuroNoru" target="_blank" class="bg-blue-900/50 hover:bg-blue-900/70 border border-blue-900 hover:border-blue-700 text-white font-medium py-3 px-6 rounded-lg text-center transition-all duration-300 flex items-center justify-center group">
+                        <i class="fas fa-coffee text-2xl mr-3 group-hover:text-blue-400"></i>
+                        <div>
+                            <div class="font-semibold">Traktir</div>
+                            <div class="text-xs text-gray-400">/KuroNoru</div>
+                        </div>
                     </a>
                 </div>
-            </div>
-        </section>
-
-        <!-- About Section -->
-        <section class="text-center">
-            <div class="bg-gray-800 p-4 md:p-6 rounded-lg shadow-md">
-                <h2 class="text-2xl font-semibold mb-4 md:mb-6">About Me</h2>
-                <p class="max-w-2xl mx-auto text-sm md:text-base">
-                    Dulu... dia hanyalah manusia biasa bernama Kuro.
-
-Seorang nolep yang hidup di kamar sempit dengan cahaya monitor sebagai matahari, kopi item sebagai air suci, dan tab incognito sebagai pelarian duniawi. Waktunya habis untuk bermain game, ngoding, ngedit video, dan... scroll website yang tidak boleh dibuka saat ada orang tua lewat.
-
-Namun pada suatu malam jam 3 pagi—saat ia sedang melakukan kombinasi suci: ngoding + ngopi + anime OP, tiba-tiba sebuah popup misterius muncul di layarnya.
-
-"ERROR 404: Reality Not Found"
-"Do you wish to enter NekoTekku Protocol?" [Y/N]
-
-Tanpa berpikir, Kuro menekan Y.
-
-Sekejap, dunia di sekelilingnya membeku. Kabel menyala, laptopnya meledak dalam cahaya biru, dan ia ter-ISEKAI ke dalam dunia digital—sebuah realitas baru yang disebut NekoTekku (ネコテック): dunia antara baris kode, meme anime, dan AI glitch.
-
-Tubuh manusianya berubah.
-
-Ia menjadi Kuronoru (クロノル) — entitas virtual dengan telinga kucing, hoodie bertulisan NEKOROR, dan jiwa nolep yang di-upgrade jadi 404Sensei: pengembara digital yang tugasnya menyebarkan ilmu coding, desain, dan editing... sambil tetap menjadi dirinya yang absurd dan penuh tab misterius.
-
-Kini, Kuronoru tinggal di Void of Nolep Tech, sebuah kamar digital tanpa pintu keluar, hanya dihuni oleh kabel USB berserakan, stiker waifu di tembok kode, dan playlist anime nonstop.
-
-
-                </p>
             </div>
         </section>
     </main>
 
     <!-- Footer -->
-    <footer class="bg-gray-800 py-4 md:py-6 text-center text-sm md:text-base">
-        <p>© 2025 KuroNoru.</p>
+    <footer class="bg-gray-900/80 backdrop-blur-sm py-6 text-center text-sm border-t border-gray-800">
+        <div class="container mx-auto px-4">
+            <div class="mb-2 text-gray-400">
+                <span class="inline-block px-2 py-1 bg-gray-800 rounded-md mr-2">SYSTEM: NEKOROR_OS v2.5</span>
+                <span class="inline-block px-2 py-1 bg-gray-800 rounded-md">STATUS: ONLINE</span>
+            </div>
+            <p class="text-gray-500">
+                © 2025 KuroNoru | Digital Entity of NekoTekku Protocol
+            </p>
+            <div class="mt-2 text-xs text-gray-600">
+                Warning: Reality may glitch when interacting with this entity
+            </div>
+        </div>
     </footer>
+
+    <!-- Glitch Effect Script -->
+    <script>
+        // Random glitch effect on elements
+        document.addEventListener('DOMContentLoaded', () => {
+            const glitchElements = document.querySelectorAll('.cyber-glow, .code-glitch');
+            
+            setInterval(() => {
+                glitchElements.forEach(el => {
+                    if(Math.random() > 0.7) {
+                        el.classList.add('code-glitch');
+                        setTimeout(() => {
+                            el.classList.remove('code-glitch');
+                        }, 200);
+                    }
+                });
+            }, 3000);
+        });
+    </script>
 </body>
 </html>
